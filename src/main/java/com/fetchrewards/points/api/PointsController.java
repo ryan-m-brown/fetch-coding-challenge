@@ -29,7 +29,7 @@ public final class PointsController {
         try {
             Database.saveTransaction(transaction);
 
-            return ResponseEntity.ok().build();
+            return ResponseEntity.status(201).build();
         } catch (NoDataException ex) {
             return ResponseEntity.status(400).body(String.format("No data for payer: %s", transaction.getPayer()));
         } catch (Exception ex) {
