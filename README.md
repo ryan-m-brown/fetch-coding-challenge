@@ -5,6 +5,13 @@ Fetch Rewards Coding Exercise - Backend Software Engineering
 ## Interpretation of Assignment
 Adding points allows for positive and negative points to be submitted. To achieve the result of DANNON having a balance of 100 after spending 5000 points, the -200 added points must be subtracted from the 300 DANNON transaction. Therefore, all negative points are treated as credits and maintained in a separate data structure. Whenever a positive number of points is submitted, a credit is potentially subtracted. There is no requirement that a payer must have supplied a positive amount of points prior to submitting a negative amount.
 
+## Running the code
+- Requirements: Java >= 1.8 (tested using 18 but the pom.xml is configured for 1.8), Maven (tested using 3.8.6), bash
+- mvn install
+- java -jar ./target/coding-challenge-1.0-SNAPSHOT.jar
+- bash ./client.sh
+
+
 ## Data Models and Algorithms
 Storing the positive point transactions can be done by specifying a natural sort order on the objects (timestamp). By default, a `TreeSet` will sort decending, enabling iteration to happend over the oldest timestamps first. Deducting spent points is done by iterating over the elements in the TreeSet and determines whether to spend all the payer's points or a subset such that no payer will have a negative balance.
 
