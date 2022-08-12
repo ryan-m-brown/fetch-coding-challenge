@@ -1,7 +1,6 @@
 package com.fetchrewards.points.database;
 
 
-import com.fetchrewards.points.exceptions.NoDataException;
 import com.fetchrewards.points.models.Transaction;
 import org.junit.Assert;
 import org.junit.Test;
@@ -11,7 +10,7 @@ import java.util.Map;
 public class TestDatabase {
 
     @Test
-    public void testAdd() throws NoDataException {
+    public void testAdd() {
         Transaction trans = new Transaction("DANNON", 1000, "2020-11-02T14:00:00Z");
         Database.saveTransaction(trans);
 
@@ -20,7 +19,7 @@ public class TestDatabase {
     }
 
     @Test
-    public void testSpend() throws NoDataException {
+    public void testSpend() {
         Transaction first = new Transaction("DANNON", 1000, "2020-11-02T14:00:00Z");
         Transaction second = new Transaction("UNILEVER", 200, "2020-10-31T11:00:00Z");
         Transaction third = new Transaction("DANNON", -200, "2020-10-31T15:00:00Z");
@@ -43,7 +42,7 @@ public class TestDatabase {
     }
 
     @Test
-    public void testBalance() throws NoDataException {
+    public void testBalance() {
         Transaction first = new Transaction("DANNON", 1000, "2020-11-02T14:00:00Z");
         Transaction second = new Transaction("UNILEVER", 200, "2020-10-31T11:00:00Z");
         Transaction third = new Transaction("DANNON", -200, "2020-10-31T15:00:00Z");
