@@ -41,4 +41,8 @@ final class DataModel {
     static final SortedSet<PayerPointsRecord> PAYER_POINT_RECORDS = new TreeSet<>();
     static final Map<String, Integer> BALANCES = new HashMap<>();
     static final Map<String, Integer> CREDITS = new HashMap<>();
+
+    private DataModel(){
+        //do nothing
+    }
 }

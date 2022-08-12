@@ -11,7 +11,6 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @SuppressWarnings("unused")
 public class App {
 
-    @EnableScheduling
     @EnableAutoConfiguration
     @Configuration
     @ComponentScan({"com.fetchrewards.points"})
