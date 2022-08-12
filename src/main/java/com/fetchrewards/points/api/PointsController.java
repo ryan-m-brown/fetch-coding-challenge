@@ -1,7 +1,6 @@
 package com.fetchrewards.points.api;
 
 import com.fetchrewards.points.database.Database;
-import com.fetchrewards.points.exceptions.NoDataException;
 import com.fetchrewards.points.models.AccountingRecord;
 import com.fetchrewards.points.models.Spend;
 import com.fetchrewards.points.models.Transaction;
@@ -30,8 +29,6 @@ public final class PointsController {
             Database.saveTransaction(transaction);
 
             return ResponseEntity.status(201).build();
-        } catch (NoDataException ex) {
-            return ResponseEntity.status(400).body(String.format("No data for payer: %s", transaction.getPayer()));
         } catch (Exception ex) {
             LOGGER.log(Level.SEVERE, ex.getMessage());
 

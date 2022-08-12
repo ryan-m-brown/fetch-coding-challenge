@@ -1,6 +1,5 @@
 package com.fetchrewards.points.database;
 
-import com.fetchrewards.points.exceptions.NoDataException;
 import com.fetchrewards.points.models.Transaction;
 
 import java.time.LocalDateTime;
@@ -15,7 +14,7 @@ public final class Database {
         //do nothing
     }
 
-    public static void saveTransaction(Transaction transaction) throws NoDataException {
+    public static void saveTransaction(Transaction transaction)  {
         LocalDateTime timestamp = LocalDateTime.parse(transaction.getTimestamp(), DateTimeFormatter.ISO_DATE_TIME);
         if (transaction.getPoints() > 0) {
             int credits = DataModel.CREDITS.getOrDefault(transaction.getPayer(), 0);
